@@ -7,7 +7,7 @@ module StrongerParameters
       return v if v.is_a?(DateTime)
 
       begin
-        DateTime.parse v
+        Time.zone.parse v
       rescue ArgumentError, TypeError
         StrongerParameters::InvalidValue.new(v, "must be a datetime")
       end
