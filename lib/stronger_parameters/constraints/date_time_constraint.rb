@@ -4,7 +4,7 @@ require 'stronger_parameters/constraint'
 module StrongerParameters
   class DateTimeConstraint < Constraint
     def value(v)
-      return v if v.is_a?(DateTime)
+      return v if v.is_a?(ActiveSupport::TimeWithZone)
 
       begin
         Time.zone.parse v

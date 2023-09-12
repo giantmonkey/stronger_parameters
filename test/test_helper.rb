@@ -12,6 +12,12 @@ require 'rails'
 require 'action_controller'
 require 'rails/generators'
 
+require 'active_support'
+require 'active_support/time_with_zone'
+require 'active_support/core_ext/time/zones'
+
+Time.zone = "Pacific Time (US & Canada)"
+
 class FakeApplication < Rails::Application; end
 
 Rails.application = FakeApplication
